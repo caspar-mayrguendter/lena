@@ -1,4 +1,4 @@
-import { Music, Users, Calendar, Mail } from 'lucide-react';
+import { Music, Users, Calendar, Mail, Radio, Apple, Youtube, Music2, Instagram } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -39,9 +39,11 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-soft-pink rounded-3xl aspect-square flex items-center justify-center">
-                <Music className="w-24 h-24 text-dusty-rose/30" />
-              </div>
+              <img
+                src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Artist performing"
+                className="w-full h-full object-cover rounded-3xl"
+              />
             </div>
           </div>
 
@@ -51,15 +53,17 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { name: 'Felix', role: 'Bass' },
-                { name: 'Lena', role: 'Gesang, Klavier' },
-                { name: 'Nico', role: 'Drums' },
-                { name: 'Michi', role: 'Gitarre' },
+                { name: 'Felix', role: 'Bass', image: 'https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=600' },
+                { name: 'Lena', role: 'Gesang, Klavier', image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600' },
+                { name: 'Nico', role: 'Drums', image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=600' },
+                { name: 'Michi', role: 'Gitarre', image: 'https://images.pexels.com/photos/1820272/pexels-photo-1820272.jpeg?auto=compress&cs=tinysrgb&w=600' },
               ].map((member) => (
                 <div key={member.name} className="text-center">
-                  <div className="bg-soft-pink rounded-3xl aspect-square mb-4 flex items-center justify-center">
-                    <Users className="w-16 h-16 text-dusty-rose/30" />
-                  </div>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover rounded-3xl aspect-square mb-4"
+                  />
                   <h3 className="font-serif text-xl text-dusty-rose mb-1">{member.name}</h3>
                   <p className="text-dusty-rose/60 text-sm">{member.role}</p>
                 </div>
@@ -84,31 +88,28 @@ export default function Home() {
               Musik zum Mitnehmen
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-soft-pink rounded-3xl p-8 flex items-center justify-center aspect-square">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-cream rounded-3xl mx-auto mb-6 flex items-center justify-center">
-                    <Music className="w-16 h-16 text-dusty-rose/40" />
-                  </div>
-                  <p className="text-dusty-rose/60 text-sm mb-4">Neuester Release</p>
-                  <h3 className="font-serif text-2xl text-dusty-rose mb-2">Zuckergoscherl</h3>
-                </div>
-              </div>
+              <img
+                src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Latest release"
+                className="w-full h-full object-cover rounded-3xl"
+              />
               <div className="flex flex-col justify-center gap-6">
                 <h3 className="font-serif text-xl text-dusty-rose mb-2">
                   Gleich reinhören - überall wo es Musik gibt!
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { name: 'Spotify', color: 'bg-green-500' },
-                    { name: 'Apple Music', color: 'bg-red-400' },
-                    { name: 'YouTube', color: 'bg-red-600' },
-                    { name: 'Amazon', color: 'bg-blue-400' },
+                    { name: 'Spotify', Icon: Radio, color: 'text-green-500' },
+                    { name: 'Apple Music', Icon: Apple, color: 'text-black' },
+                    { name: 'YouTube', Icon: Youtube, color: 'text-red-600' },
+                    { name: 'Amazon', Icon: Music2, color: 'text-blue-600' },
                   ].map((platform) => (
                     <button
                       key={platform.name}
-                      className="bg-dusty-rose/10 hover:bg-dusty-rose/20 text-dusty-rose rounded-2xl py-4 transition-colors"
+                      className="bg-dusty-rose/10 hover:bg-dusty-rose/20 text-dusty-rose rounded-2xl py-4 flex items-center justify-center gap-2 transition-colors"
                     >
-                      {platform.name}
+                      <platform.Icon className={`w-5 h-5 ${platform.color}`} />
+                      <span className="text-sm">{platform.name}</span>
                     </button>
                   ))}
                 </div>
@@ -123,13 +124,53 @@ export default function Home() {
             <p className="text-dusty-rose/70 mb-8">
               Wir freuen uns, von euch zu hören!
             </p>
-            <a
-              href="mailto:lenamariahagmann@gmail.com"
-              className="inline-flex items-center gap-3 bg-dusty-rose text-cream px-8 py-4 rounded-full hover:bg-dusty-rose/90 transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-              lenamariahagmann@gmail.com
-            </a>
+            <div className="flex flex-col items-center gap-6">
+              <a
+                href="mailto:lenamariahagmann@gmail.com"
+                className="inline-flex items-center gap-3 bg-dusty-rose text-cream px-8 py-4 rounded-full hover:bg-dusty-rose/90 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                lenamariahagmann@gmail.com
+              </a>
+              <div className="flex gap-6 justify-center">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-dusty-rose hover:text-dusty-rose/80 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-8 h-8" />
+                </a>
+                <a
+                  href="https://tiktok.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-dusty-rose hover:text-dusty-rose/80 transition-colors"
+                  aria-label="TikTok"
+                >
+                  <Music className="w-8 h-8" />
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-dusty-rose hover:text-dusty-rose/80 transition-colors"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="w-8 h-8" />
+                </a>
+                <a
+                  href="https://spotify.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-dusty-rose hover:text-dusty-rose/80 transition-colors"
+                  aria-label="Spotify"
+                >
+                  <Radio className="w-8 h-8" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

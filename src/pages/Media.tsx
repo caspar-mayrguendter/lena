@@ -1,52 +1,66 @@
-import { Youtube, Video } from 'lucide-react';
+import { Video } from 'lucide-react';
 
 export default function Media() {
   const youtubeVideos = [
-    { id: '1', title: 'Sunset Dreams - Official Music Video', thumbnail: 'video1' },
-    { id: '2', title: 'Midnight Thoughts (Live Session)', thumbnail: 'video2' },
-    { id: '3', title: 'Golden Hour - Acoustic Version', thumbnail: 'video3' },
+    { videoId: 'dQw4w9WgXcQ', title: 'Sunset Dreams - Official Music Video' },
+    { videoId: 'jNQXAC9IVRw', title: 'Midnight Thoughts (Live Session)' },
+    { videoId: 'tYzMGcUty6s', title: 'Golden Hour - Acoustic Version' },
   ];
 
   const tiktoks = [
-    { id: '1', title: 'Behind the scenes of Sunset Dreams', thumbnail: 'tiktok1' },
-    { id: '2', title: 'Studio vibes', thumbnail: 'tiktok2' },
-    { id: '3', title: 'New song snippet', thumbnail: 'tiktok3' },
-    { id: '4', title: 'Sound check moments', thumbnail: 'tiktok4' },
+    { videoId: '@lenamariesingt/12345', title: 'Behind the scenes of Sunset Dreams' },
+    { videoId: '@lenamariesingt/12346', title: 'Studio vibes' },
+    { videoId: '@lenamariesingt/12347', title: 'New song snippet' },
+    { videoId: '@lenamariesingt/12348', title: 'Sound check moments' },
   ];
 
   return (
     <div className="min-h-screen bg-cream pt-32 pb-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-20">
-          <div className="flex items-center gap-4 mb-8">
-            <Youtube className="w-10 h-10 text-dusty-rose" />
-            <h1 className="font-serif text-4xl text-dusty-rose">YouTube</h1>
-          </div>
+          <h1 className="font-serif text-4xl text-dusty-rose mb-8">YouTube</h1>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {youtubeVideos.map((video) => (
-              <div key={video.id} className="group cursor-pointer">
-                <div className="bg-soft-pink rounded-3xl aspect-video mb-4 flex items-center justify-center overflow-hidden hover:bg-dusty-rose/20 transition-colors">
-                  <Youtube className="w-16 h-16 text-dusty-rose/30 group-hover:text-dusty-rose/50 transition-colors" />
+              <a
+                key={video.videoId}
+                href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer"
+              >
+                <div className="bg-soft-pink rounded-3xl aspect-video mb-4 overflow-hidden hover:shadow-lg transition-shadow">
+                  <img
+                    src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
+                    alt={video.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  />
                 </div>
                 <h3 className="text-dusty-rose font-medium">{video.title}</h3>
-              </div>
+              </a>
             ))}
           </div>
         </div>
 
         <div>
-          <div className="flex items-center gap-4 mb-8">
-            <Video className="w-10 h-10 text-dusty-rose" />
-            <h1 className="font-serif text-4xl text-dusty-rose">TikTok</h1>
-          </div>
+          <h1 className="font-serif text-4xl text-dusty-rose mb-8">TikTok</h1>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {tiktoks.map((tiktok) => (
-              <div key={tiktok.id} className="group cursor-pointer">
-                <div className="bg-soft-pink rounded-3xl aspect-[9/16] mb-4 flex items-center justify-center overflow-hidden hover:bg-dusty-rose/20 transition-colors">
-                  <Video className="w-12 h-12 text-dusty-rose/30 group-hover:text-dusty-rose/50 transition-colors" />
+            {tiktoks.map((tiktok, index) => (
+              <a
+                key={index}
+                href={`https://www.tiktok.com/${tiktok.videoId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer"
+              >
+                <div className="bg-soft-pink rounded-3xl aspect-[9/16] mb-4 overflow-hidden flex items-center justify-center hover:shadow-lg transition-shadow">
+                  <img
+                    src={`https://images.pexels.com/photos/${3000 + index}/pexels-photo-${3000 + index}.jpeg?auto=compress&cs=tinysrgb&w=400&h=600`}
+                    alt={tiktok.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  />
                 </div>
                 <p className="text-dusty-rose text-sm">{tiktok.title}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -56,9 +70,9 @@ export default function Media() {
             Follow für mehr Content und Updates
           </p>
           <div className="flex justify-center gap-6 mt-8">
-            <button className="bg-dusty-rose text-cream px-8 py-3 rounded-full hover:bg-dusty-rose/90 transition-colors">
+            <a href="https://www.tiktok.com/@lenamariesingt" target="_blank" rel="noopener noreferrer" className="bg-dusty-rose text-cream px-8 py-3 rounded-full hover:bg-dusty-rose/90 transition-colors">
               @lenamariesingt
-            </button>
+            </a>
           </div>
         </div>
       </div>
