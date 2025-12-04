@@ -160,7 +160,7 @@ export default function Home() {
                   <Instagram className="w-8 h-8" />
                 </a>
                 <a
-                  href="https://www.tiktok.com/@lenipombeni"
+                  href="https://www.tiktok.com/@lenamariesingt"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-dusty-rose hover:text-dusty-rose/80 transition-colors"

@@ -42,7 +42,7 @@ export default function Media() {
             {tiktoks.map((tiktok, index) => (
               <a
                 key={index}
-                href={`https://www.tiktok.com/@lenipombeni/video/${tiktok.videoId}`}
+                href={`https://www.tiktok.com/@lenamariesingt/video/${tiktok.videoId}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group cursor-pointer"
@@ -65,8 +65,8 @@ export default function Media() {
             Follow für mehr Content und Updates
           </p>
           <div className="flex justify-center gap-6 mt-8">
-            <a href="https://www.tiktok.com/@lenipombeni" target="_blank" rel="noopener noreferrer" className="bg-dusty-rose text-cream px-8 py-3 rounded-full hover:bg-dusty-rose/90 transition-colors">
-              @lenipombeni
+            <a href="https://www.tiktok.com/@lenamariesingt" target="_blank" rel="noopener noreferrer" className="bg-dusty-rose text-cream px-8 py-3 rounded-full hover:bg-dusty-rose/90 transition-colors">
+              @lenamariesingt
             </a>
           </div>
         </div>
