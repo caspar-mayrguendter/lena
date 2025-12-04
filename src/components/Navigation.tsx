@@ -29,16 +29,6 @@ export default function Navigation() {
               MEDIA
             </Link>
           </li>
-          <li>
-            <Link
-              to="/imprint"
-              className={`transition-colors ${
-                isActive('/imprint') ? 'text-dusty-rose' : 'text-dusty-rose/60 hover:text-dusty-rose'
-              }`}
-            >
-              IMPRINT
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>

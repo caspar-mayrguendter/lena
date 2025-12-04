@@ -1,8 +1,4 @@
 import { Music, Calendar, Mail, Radio, Apple, Youtube, Music2, Instagram } from 'lucide-react';
-import bandImage from '../../public/assets/BandImage.jpg'
-import lenaCuttedImage from '../../public/assets/LenaCutted.jpeg'
-import lenaImage from '../../public/assets/LenaImage.jpg'
-import zuckergoscherlImage from '../../public/assets/ZuckergoscherlWithoutBackground.png'
 
 export default function Home() {
   return (
@@ -15,8 +11,8 @@ export default function Home() {
             <div className='-mb-10 sm:mx-20'>
 
               <img
-                  src={lenaCuttedImage}
-                  alt="Artist performing"
+                  src='/assets/LenaCutted.jpeg'
+                  alt="Lena Marie"
                   className="object-cover rounded-3xl shadow-lg"
               />
 
@@ -59,8 +55,8 @@ export default function Home() {
             </div>
             <div className="relative">
               <img
-                  src={bandImage}
-                  alt="Artist performing"
+                  src='/assets/BandImage.jpg'
+                  alt="Die Bandmitglieder"
                   className="w-full h-full object-cover rounded-3xl"
               />
             </div>
@@ -72,10 +68,10 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { name: 'Felix', role: 'Bass', image: lenaImage },
-                { name: 'Lena', role: 'Gesang, Klavier', image: lenaImage },
-                { name: 'Nico', role: 'Drums', image: lenaImage },
-                { name: 'Michi', role: 'Gitarre', image: lenaImage },
+                { name: 'Felix', role: 'Bass', image: '/assets/LenaImage.jpg' },
+                { name: 'Lena', role: 'Gesang, Klavier', image: '/assets/LenaImage.jpg' },
+                { name: 'Nico', role: 'Drums', image: '/assets/LenaImage.jpg' },
+                { name: 'Michi', role: 'Gitarre', image: '/assets/LenaImage.jpg' },
               ].map((member) => (
                 <div key={member.name} className="text-center">
                   <img
@@ -108,7 +104,7 @@ export default function Home() {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <img
-                src={zuckergoscherlImage}
+                src='/assets/ZuckergoscherlWithoutBackground.png'
                 alt="Latest release"
                 className="w-full h-full object-cover rounded-3xl p-2 bg-cream"
               />
@@ -191,6 +187,10 @@ export default function Home() {
                   <Radio className="w-8 h-8" />
                 </a>
               </div>
+
+              <img src='/assets/ContactImage.jpg'
+                   alt="Die Bandmitglieder"
+                   className="w-full h-full object-cover rounded-3xl" />
             </div>
           </div>
         </div>
