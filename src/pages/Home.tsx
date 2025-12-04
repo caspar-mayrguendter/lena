@@ -1,5 +1,6 @@
 import { Music, Calendar, Mail, Radio, Apple, Youtube, Music2, Instagram } from 'lucide-react';
 import bandImage from '../../public/assets/BandImage.jpg'
+import lenaCuttedImage from '../../public/assets/LenaCutted.jpeg'
 import lenaImage from '../../public/assets/LenaImage.jpg'
 import zuckergoscherlImage from '../../public/assets/ZuckergoscherlWithoutBackground.png'
 
@@ -8,16 +9,31 @@ export default function Home() {
     <div className="min-h-screen bg-cream">
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-soft-pink rounded-[40px] p-12 mb-20 mx-20 relative overflow-hidden">
-            <div className="relative z-10">
-              <h1 className="font-serif text-4xl md:text-5xl text-dusty-rose mb-4">
-                Lena Marie
-              </h1>
-              <p className="text-dusty-rose/80 text-lg tracking-wide">
-                Wiener Indiepop für Naschkatzen
-              </p>
+
+          <div className='sm:mx-20 mb-20'>
+
+            <div className='-mb-10 sm:mx-20'>
+
+              <img
+                  src={lenaCuttedImage}
+                  alt="Artist performing"
+                  className="object-cover rounded-3xl shadow-lg"
+              />
+
             </div>
-            <div className="absolute -right-8 -bottom-8 w-64 h-64 bg-dusty-rose/5 rounded-full"></div>
+
+            <div className="bg-soft-pink rounded-[40px] p-12 relative overflow-hidden shadow-xl">
+              <div className="relative z-10">
+                <h1 className="font-serif text-4xl md:text-5xl text-dusty-rose mb-4">
+                  Lena Marie
+                </h1>
+                <p className="text-dusty-rose/80 text-lg tracking-wide">
+                  Wiener Indiepop für Naschkatzen
+                </p>
+              </div>
+              <div className="absolute -right-8 -bottom-8 w-64 h-64 bg-dusty-rose/5 rounded-full"></div>
+            </div>
+
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 mb-20">
