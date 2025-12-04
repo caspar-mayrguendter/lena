@@ -53,11 +53,11 @@ export default function Media() {
 
         <div className="mt-16 bg-soft-pink rounded-3xl p-12 text-center">
           <p className="text-dusty-rose/70 text-lg">
-            Follow for more content, behind-the-scenes moments, and updates
+            Follow für mehr Content und Updates
           </p>
           <div className="flex justify-center gap-6 mt-8">
             <button className="bg-dusty-rose text-cream px-8 py-3 rounded-full hover:bg-dusty-rose/90 transition-colors">
-              @lunarose
+              @lenamariesingt
             </button>
           </div>
         </div>
