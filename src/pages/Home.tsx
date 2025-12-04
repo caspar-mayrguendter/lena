@@ -66,27 +66,29 @@ export default function Home() {
             <h2 className="font-serif text-3xl text-dusty-rose mb-12 text-center">
               Die Band
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { name: 'Felix', role: 'Bass', image: '/assets/LenaImage.jpg' },
                 { name: 'Lena', role: 'Gesang, Klavier', image: '/assets/LenaImage.jpg' },
                 { name: 'Nico', role: 'Drums', image: '/assets/LenaImage.jpg' },
                 { name: 'Michi', role: 'Gitarre', image: '/assets/LenaImage.jpg' },
               ].map((member) => (
-                <div key={member.name} className="text-center">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover rounded-3xl aspect-square mb-4"
-                  />
-                  <h3 className="font-serif text-xl text-dusty-rose mb-1">{member.name}</h3>
-                  <p className="text-dusty-rose/60 text-sm">{member.role}</p>
-                </div>
+                  <div>
+                    <div key={member.name} className="text-center">
+                      <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover rounded-3xl aspect-square mb-4"
+                      />
+                      <h3 className="font-serif text-xl text-dusty-rose mb-1">{member.name}</h3>
+                      <p className="text-dusty-rose/60 text-sm">{member.role}</p>
+                    </div>
+                  </div>
               ))}
             </div>
           </div>
 
-          <div className="mb-20 mt-40">
+          <div className="mb-20">
             <h2 className="font-serif text-3xl text-dusty-rose mb-8 text-center">
               Unsere nächsten Shows
             </h2>
