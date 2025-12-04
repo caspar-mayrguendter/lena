@@ -60,6 +60,21 @@ export default function Media() {
           </div>
         </div>
 
+        <blockquote className="tiktok-embed min-w-80 max-w-2xl" cite="https://www.tiktok.com/@scout2015/video/6718335390845095173"
+                    data-video-id="6718335390845095173">
+          <section>
+            <a target="_blank" title="@scout2015" href="https://www.tiktok.com/@scout2015?refer=embed">
+              @scout2015
+            </a>
+              Scramble up ur name &#38; I’ll try to guess it😍❤️
+            <a title="foryoupage" target="_blank" href="https://www.tiktok.com/tag/foryoupage?refer=embed">#foryoupage</a>
+            <a title="petsoftiktok" target="_blank" href="https://www.tiktok.com/tag/petsoftiktok?refer=embed">#petsoftiktok</a>
+            <a title="aesthetic" target="_blank" href="https://www.tiktok.com/tag/aesthetic?refer=embed">#aesthetic</a>
+            <a target="_blank" title="♬ original sound - tiff" href="https://www.tiktok.com/music/original-sound-6689804660171082501?refer=embed">♬ original sound - tiff</a>
+          </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+
         <div className="mt-16 bg-soft-pink rounded-3xl p-12 text-center">
           <p className="text-dusty-rose/70 text-lg">
             Follow für mehr Content und Updates
