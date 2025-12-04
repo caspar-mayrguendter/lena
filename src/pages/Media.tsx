@@ -4,9 +4,9 @@ export default function Media() {
   ];
 
   const tiktoks = [
-    { videoId: '7576371863098494230', title: 'Tag 1 von 100 meiner Musik' },
-    { videoId: '7571915743659379990', title: 'Einmal ein wildes Huhn...' },
-    { videoId: '7575627083573939478', title: 'Let it be in Wien' },
+    { videoId: '7576371863098494230', title: 'Tag 1 von 100 meiner Musik', image: '/assets/TikTok1.png' },
+    { videoId: '7571915743659379990', title: 'Einmal ein wildes Huhn...', image: '/assets/TikTok2.png' },
+    { videoId: '7575627083573939478', title: 'Let it be in Wien', image: '/assets/TikTok3.png' },
   ];
 
   return (
@@ -49,7 +49,7 @@ export default function Media() {
               >
                 <div className="bg-soft-pink rounded-3xl aspect-[9/16] mb-4 overflow-hidden flex items-center justify-center hover:shadow-lg transition-shadow">
                   <img
-                    src={`https://www.tiktok.com/api/img/?itemId=${tiktok.videoId}`}
+                    src={tiktok.image}
                     alt={tiktok.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                   />
