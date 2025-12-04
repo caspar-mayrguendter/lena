@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function Navigation() {
+export default function Footer() {
 
     return (
         <div className='w-full border-t-2 border-rose-200 bg-cream/95'>
