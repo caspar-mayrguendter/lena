@@ -1,6 +1,6 @@
 import { Music, Calendar, Mail, Radio, Apple, Youtube, Music2, Instagram } from 'lucide-react';
 import bandImage from '../../assets/BandImage.jpg'
-import lenaImage from '../../assets/LenaImage.JPG'
+import lenaImage from '../../assets/LenaImage.jpg'
 import zuckergoscherlImage from '../../assets/ZuckergoscherlWithoutBackground.png'
 
 export default function Home() {
