@@ -1,4 +1,7 @@
 import { Music, Calendar, Mail, Radio, Apple, Youtube, Music2, Instagram } from 'lucide-react';
+import bandImage from '../../assets/BandImage.jpg'
+import lenaImage from '../../assets/LenaImage.JPG'
+import zuckergoscherlImage from '../../assets/ZuckergoscherlWithoutBackground.png'
 
 export default function Home() {
   return (
@@ -40,7 +43,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <img
-                  src="/assets/BandImage.jpg"
+                  src={bandImage}
                   alt="Artist performing"
                   className="w-full h-full object-cover rounded-3xl"
               />
@@ -53,10 +56,10 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { name: 'Felix', role: 'Bass', image: 'assets/LenaImage.JPG' },
-                { name: 'Lena', role: 'Gesang, Klavier', image: 'assets/LenaImage.JPG' },
-                { name: 'Nico', role: 'Drums', image: 'assets/LenaImage.JPG' },
-                { name: 'Michi', role: 'Gitarre', image: 'assets/LenaImage.JPG' },
+                { name: 'Felix', role: 'Bass', image: lenaImage },
+                { name: 'Lena', role: 'Gesang, Klavier', image: lenaImage },
+                { name: 'Nico', role: 'Drums', image: lenaImage },
+                { name: 'Michi', role: 'Gitarre', image: lenaImage },
               ].map((member) => (
                 <div key={member.name} className="text-center">
                   <img
@@ -89,7 +92,7 @@ export default function Home() {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <img
-                src="/assets/ZuckergoscherlWithoutBackground.png"
+                src={zuckergoscherlImage}
                 alt="Latest release"
                 className="w-full h-full object-cover rounded-3xl p-2 bg-cream"
               />
