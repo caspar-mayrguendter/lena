@@ -11,7 +11,7 @@ export const upcomingShows: UpcomingShow[] = [
   {
     id: '1',
     date: '2025-12-19',
-    time: '19:00',
+    time: '19:30',
     venue: 'Loop',
     city: 'Wien',
   }
