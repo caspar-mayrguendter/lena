@@ -47,14 +47,18 @@ export default function Media() {
                 rel="noopener noreferrer"
                 className="group cursor-pointer"
               >
-                <div className="bg-soft-pink rounded-3xl aspect-[9/16] mb-4 overflow-hidden flex items-center justify-center hover:shadow-lg transition-shadow">
+                <div className="relative bg-soft-pink rounded-3xl aspect-[9/16] mb-4 overflow-hidden flex items-center justify-center hover:shadow-lg transition-shadow">
                   <img
                     src={tiktok.image}
                     alt={tiktok.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                   />
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl flex items-end justify-center p-4">
+                    <p className="text-white text-center text-sm font-medium line-clamp-3">
+                      {tiktok.title}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-dusty-rose text-sm">{tiktok.title}</p>
               </a>
             ))}
           </div>

@@ -1,4 +1,5 @@
-import { Music, Calendar, Mail, Radio, Apple, Youtube, Music2, Instagram } from 'lucide-react';
+import { Calendar, Mail } from 'lucide-react';
+import { upcomingShows } from '../data/upcomingShows';
 
 export default function Home() {
   return (
@@ -92,12 +93,39 @@ export default function Home() {
             <h2 className="font-serif text-3xl text-dusty-rose mb-8 text-center">
               Unsere nächsten Shows
             </h2>
-            <div className="bg-soft-pink rounded-3xl p-8">
-              <div className="flex items-center justify-center gap-4 text-dusty-rose/60">
-                <Calendar className="w-8 h-8" />
-                <p className="text-lg">New dates coming soon...</p>
+            {upcomingShows.length > 0 ? (
+              <div className="space-y-4">
+                {upcomingShows.map((show) => (
+                  <div key={show.id} className="bg-soft-pink rounded-3xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div className="flex-1">
+                      <p className="text-dusty-rose font-medium text-lg">
+                        {new Date(show.date).toLocaleDateString('de-AT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                      </p>
+                      <p className="text-dusty-rose/70 text-sm mb-2">{show.time} Uhr</p>
+                      <p className="text-dusty-rose font-medium">{show.venue}</p>
+                      <p className="text-dusty-rose/60 text-sm">{show.city}</p>
+                    </div>
+                    {show.ticketLink && (
+                      <a
+                        href={show.ticketLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-dusty-rose text-cream px-6 py-2 rounded-full hover:bg-dusty-rose/90 transition-colors text-sm font-medium whitespace-nowrap"
+                      >
+                        Tickets
+                      </a>
+                    )}
+                  </div>
+                ))}
               </div>
-            </div>
+            ) : (
+              <div className="bg-soft-pink rounded-3xl p-8">
+                <div className="flex items-center justify-center gap-4 text-dusty-rose/60">
+                  <Calendar className="w-8 h-8" />
+                  <p className="text-lg">Neue Termine kommen bald...</p>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="mb-20">
@@ -116,17 +144,16 @@ export default function Home() {
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { name: 'Spotify', Icon: Radio, color: 'text-green-500', link: 'https://open.spotify.com/intl-de/artist/2n5bx90NS59g432MaFaMOr?si=KFnDClqgTDuYIanNYXn-9A' },
-                    { name: 'Apple Music', Icon: Apple, color: 'text-black', link: 'https://music.apple.com/at/artist/lena-marie/1815283237' },
-                    { name: 'YouTube', Icon: Youtube, color: 'text-red-600', link: 'https://www.youtube.com/channel/UCETBQqytn4C6PVa_FTBF9JA' },
-                    { name: 'Amazon', Icon: Music2, color: 'text-blue-600', link: 'https://www.amazon.de/-/en/dp/B0F95VYLTC' },
+                    { name: 'Spotify', icon: '/icons/icons8-spotify-50.svg', link: 'https://open.spotify.com/intl-de/artist/2n5bx90NS59g432MaFaMOr?si=KFnDClqgTDuYIanNYXn-9A' },
+                    { name: 'Apple Music', icon: '/icons/icons8-apple-music.svg', link: 'https://music.apple.com/at/artist/lena-marie/1815283237' },
+                    { name: 'YouTube', icon: '/icons/icons8-youtube-50.svg', link: 'https://www.youtube.com/channel/UCETBQqytn4C6PVa_FTBF9JA' },
+                    { name: 'Amazon', icon: '/icons/icons8-amazon-music.svg', link: 'https://www.amazon.de/-/en/dp/B0F95VYLTC' },
                   ].map((platform) => (
-                    <a href={platform.link} className='w-full'>
+                    <a href={platform.link} key={platform.name} className='w-full'>
                       <button
-                        key={platform.name}
                         className="w-full bg-dusty-rose/10 hover:bg-dusty-rose/20 text-dusty-rose rounded-2xl py-4 flex items-center justify-center gap-2 transition-colors"
                       >
-                        <platform.Icon className={`w-5 h-5 ${platform.color}`} />
+                        <img src={platform.icon} alt={platform.name} className="w-5 h-5" />
                         <span className="text-sm">{platform.name}</span>
                       </button>
                     </a>
@@ -156,37 +183,37 @@ export default function Home() {
                   href="https://www.instagram.com/lenamariesingt/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-dusty-rose hover:text-dusty-rose/80 transition-colors"
+                  className="hover:opacity-80 transition-opacity"
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-8 h-8" />
+                  <img src="/icons/icons8-instagram-50.svg" alt="Instagram" className="w-8 h-8" />
                 </a>
                 <a
                   href="https://www.tiktok.com/@lenamariesingt"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-dusty-rose hover:text-dusty-rose/80 transition-colors"
+                  className="hover:opacity-80 transition-opacity"
                   aria-label="TikTok"
                 >
-                  <Music className="w-8 h-8" />
+                  <img src="/icons/icons8-tiktok-50.svg" alt="TikTok" className="w-8 h-8" />
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCETBQqytn4C6PVa_FTBF9JA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-dusty-rose hover:text-dusty-rose/80 transition-colors"
+                  className="hover:opacity-80 transition-opacity"
                   aria-label="YouTube"
                 >
-                  <Youtube className="w-8 h-8" />
+                  <img src="/icons/icons8-youtube-50.svg" alt="YouTube" className="w-8 h-8" />
                 </a>
                 <a
                   href="https://open.spotify.com/intl-de/artist/2n5bx90NS59g432MaFaMOr?si=KFnDClqgTDuYIanNYXn-9A"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-dusty-rose hover:text-dusty-rose/80 transition-colors"
+                  className="hover:opacity-80 transition-opacity"
                   aria-label="Spotify"
                 >
-                  <Radio className="w-8 h-8" />
+                  <img src="/icons/icons8-spotify-50.svg" alt="Spotify" className="w-8 h-8" />
                 </a>
               </div>
 
