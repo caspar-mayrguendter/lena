@@ -4,9 +4,9 @@ export default function Media() {
   ];
 
   const tiktoks = [
-    { videoId: '7576371863098494230', title: 'Tag 1 von 100 meiner Musik', image: '/assets/TikTok1.png' },
-    { videoId: '7571915743659379990', title: 'Einmal ein wildes Huhn...', image: '/assets/TikTok2.png' },
-    { videoId: '7575627083573939478', title: 'Let it be in Wien', image: '/assets/TikTok3.png' },
+    { videoId: '7576371863098494230', title: 'Tag 1/100 hihi 🎶🐭\n dachte mit ‚if I were a boy‘ startet es sich gut 🌞', image: '/assets/TikTok1.png' },
+    { videoId: '7571915743659379990', title: 'ich hoff, ihr habt es warm und gut heute 🧡❄️🧣 samstagsbussi', image: '/assets/TikTok2.png' },
+    { videoId: '7575627083573939478', title: 'musste einen marmeladenglasmoment song schreiben 🤍🧡 ', image: '/assets/TikTok3.png' },
   ];
 
   return (
