@@ -68,10 +68,10 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { name: 'Felix', role: 'Bass', image: '/assets/LenaImage.jpg' },
-                { name: 'Lena', role: 'Gesang, Klavier', image: '/assets/LenaImage.jpg' },
-                { name: 'Nico', role: 'Drums', image: '/assets/LenaImage.jpg' },
-                { name: 'Michi', role: 'Gitarre', image: '/assets/LenaImage.jpg' },
+                { name: 'Felix', role: 'Bass', image: '/assets/BandFelix.jpg' },
+                { name: 'Lena', role: 'Gesang, Klavier', image: '/assets/BandLena.jpg' },
+                { name: 'Michi', role: 'Gitarre', image: '/assets/BandMichi.jpg' },
+                { name: 'Nico', role: 'Drums', image: '/assets/BandNico.jpg' },
               ].map((member) => (
                   <div>
                     <div key={member.name} className="text-center">
