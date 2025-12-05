@@ -1,12 +1,5 @@
 {
   "rewrites":  [
     {"source": "/(.*)", "destination": "/"}
-  ],
-  "redirects": [
-    {
-      "source": "http://lenamarie.at/:path*",
-      "destination": "https://lenamarie.at/:path*",
-      "statusCode": 301
-    }
   ]
 }
