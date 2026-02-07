@@ -1,5 +1,6 @@
 export default function Media() {
   const youtubeVideos = [
+    { videoId: 'zG9HOpDR4pY', title: 'Lena Marie - Ampel (Official Video)' },
     { videoId: 'm1_bL8DeUUQ', title: 'Lena Marie - Das kleine Konzert' },
   ];
 
