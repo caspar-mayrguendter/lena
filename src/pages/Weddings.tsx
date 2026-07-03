@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { Mail, Calendar, Music, CircleCheck as CheckCircle, ChevronDown, Send } from 'lucide-react';
-import { supabase } from '../lib/supabase';
 
 interface FAQItem {
   question: string;
@@ -63,6 +63,7 @@ function FAQAccordion() {
 }
 
 function ContactForm() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -77,15 +78,12 @@ function ContactForm() {
     setStatus('loading');
 
     try {
-      const { error } = await supabase.from('contact_submissions').insert({
-        name: formData.name,
-        email: formData.email,
-        event_type: formData.eventType || null,
-        event_date: formData.eventDate || null,
-        message: formData.message,
-      });
-
-      if (error) throw error;
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
       setStatus('success');
       setFormData({ name: '', email: '', eventType: '', eventDate: '', message: '' });
@@ -95,12 +93,13 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <label className="block text-dusty-rose mb-2 font-medium">Name *</label>
           <input
             type="text"
+            name="name"
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -112,6 +111,7 @@ function ContactForm() {
           <label className="block text-dusty-rose mb-2 font-medium">Email *</label>
           <input
             type="email"
+            name="email"
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -125,6 +125,7 @@ function ContactForm() {
         <div>
           <label className="block text-dusty-rose mb-2 font-medium">Art des Events</label>
           <select
+            name="event_type"
             value={formData.eventType}
             onChange={(e) => setFormData({ ...formData, eventType: e.target.value })}
             className="w-full bg-cream border-2 border-rose-200 rounded-2xl px-6 py-4 text-dusty-rose focus:outline-none focus:border-dusty-rose transition-colors appearance-none cursor-pointer"
@@ -140,6 +141,7 @@ function ContactForm() {
           <label className="block text-dusty-rose mb-2 font-medium">Datum</label>
           <input
             type="date"
+            name="event_date"
             value={formData.eventDate}
             onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
             className="w-full bg-cream border-2 border-rose-200 rounded-2xl px-6 py-4 text-dusty-rose focus:outline-none focus:border-dusty-rose transition-colors"
@@ -151,6 +153,7 @@ function ContactForm() {
         <label className="block text-dusty-rose mb-2 font-medium">Nachricht *</label>
         <textarea
           required
+          name="message"
           rows={5}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
