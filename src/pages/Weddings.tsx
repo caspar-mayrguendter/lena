@@ -74,8 +74,8 @@ function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <div className="text-center py-8">
-        <p className="text-green-600 flex items-center justify-center gap-2 text-lg">
+      <div className="text-center py-5">
+        <p className="text-dusty-rose flex items-center justify-center gap-2 text-lg bg-soft-pink rounded-3xl p-8 shadow-lg border-2 border-rose-200">
           <CheckCircle className="w-6 h-6" />
           Vielen Dank! Ich melde mich bald bei dir.
         </p>
@@ -172,7 +172,7 @@ function ContactForm() {
           )}
         </button>
 
-        {state.errors && state.errors.length > 0 && (
+        {state.errors && (
           <p className="text-red-500">Etwas ist schiefgelaufen. Bitte versuche es erneut.</p>
         )}
       </div>
