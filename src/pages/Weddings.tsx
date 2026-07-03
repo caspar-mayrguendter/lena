@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { Mail, Calendar, Music, CircleCheck as CheckCircle, ChevronDown, Send } from 'lucide-react';
 
 interface FAQItem {
@@ -63,7 +63,7 @@ function FAQAccordion() {
 }
 
 function ContactForm() {
-  const formRef = useRef<HTMLFormElement>(null);
+  const [state, handleSubmit] = useForm('mvzjvjly');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -71,29 +71,20 @@ function ContactForm() {
     eventDate: '',
     message: '',
   });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-
-    try {
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current!,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
-      setStatus('success');
-      setFormData({ name: '', email: '', eventType: '', eventDate: '', message: '' });
-    } catch {
-      setStatus('error');
-    }
-  };
+  if (state.succeeded) {
+    return (
+      <div className="text-center py-8">
+        <p className="text-green-600 flex items-center justify-center gap-2 text-lg">
+          <CheckCircle className="w-6 h-6" />
+          Vielen Dank! Ich melde mich bald bei dir.
+        </p>
+      </div>
+    );
+  }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <label className="block text-dusty-rose mb-2 font-medium">Name *</label>
@@ -106,6 +97,7 @@ function ContactForm() {
             className="w-full bg-cream border-2 border-rose-200 rounded-2xl px-6 py-4 text-dusty-rose focus:outline-none focus:border-dusty-rose transition-colors"
             placeholder="Dein Name"
           />
+          <ValidationError field="name" errors={state.errors} />
         </div>
         <div>
           <label className="block text-dusty-rose mb-2 font-medium">Email *</label>
@@ -118,6 +110,7 @@ function ContactForm() {
             className="w-full bg-cream border-2 border-rose-200 rounded-2xl px-6 py-4 text-dusty-rose focus:outline-none focus:border-dusty-rose transition-colors"
             placeholder="deine@email.com"
           />
+          <ValidationError field="email" errors={state.errors} />
         </div>
       </div>
 
@@ -160,15 +153,16 @@ function ContactForm() {
           className="w-full bg-cream border-2 border-rose-200 rounded-2xl px-6 py-4 text-dusty-rose focus:outline-none focus:border-dusty-rose transition-colors resize-none"
           placeholder="Erzähl mir von deinem Event..."
         />
+        <ValidationError field="message" errors={state.errors} />
       </div>
 
       <div className="flex flex-col items-center gap-4">
         <button
           type="submit"
-          disabled={status === 'loading'}
+          disabled={state.submitting}
           className="bg-dusty-rose text-cream px-12 py-4 rounded-full hover:bg-dusty-rose/90 transition-colors flex items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {status === 'loading' ? (
+          {state.submitting ? (
             'Wird gesendet...'
           ) : (
             <>
@@ -178,13 +172,7 @@ function ContactForm() {
           )}
         </button>
 
-        {status === 'success' && (
-          <p className="text-green-600 flex items-center gap-2">
-            <CheckCircle className="w-5 h-5" />
-            Vielen Dank! Ich melde mich bald bei dir.
-          </p>
-        )}
-        {status === 'error' && (
+        {state.errors && state.errors.length > 0 && (
           <p className="text-red-500">Etwas ist schiefgelaufen. Bitte versuche es erneut.</p>
         )}
       </div>
