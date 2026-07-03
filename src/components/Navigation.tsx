@@ -29,6 +29,16 @@ export default function Navigation() {
               MEDIA
             </Link>
           </li>
+          <li>
+            <Link
+              to="/weddings"
+              className={`transition-colors ${
+                isActive('/weddings') ? 'text-dusty-rose' : 'text-dusty-rose/60 hover:text-dusty-rose'
+              }`}
+            >
+              WEDDINGS
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
