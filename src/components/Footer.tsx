@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <ul className="flex justify-center gap-12 text-sm tracking-widest">
                     <li className='transition-colors text-dusty-rose/60'>
-                        © Lena Marie 2025
+                        © Lena Marie 2026
                     </li>
                     <li>
                         <Link
