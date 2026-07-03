@@ -31,12 +31,12 @@ export default function Navigation() {
           </li>
           <li>
             <Link
-              to="/weddings"
+              to="/events"
               className={`transition-colors ${
-                isActive('/weddings') ? 'text-dusty-rose' : 'text-dusty-rose/60 hover:text-dusty-rose'
+                isActive('/events') ? 'text-dusty-rose' : 'text-dusty-rose/60 hover:text-dusty-rose'
               }`}
             >
-              WEDDINGS
+              EVENTS
             </Link>
           </li>
         </ul>

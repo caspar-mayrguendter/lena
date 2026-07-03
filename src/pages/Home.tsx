@@ -12,7 +12,7 @@ export default function Home() {
             <div className='-mb-10 sm:mx-20'>
 
               <img
-                  src='/assets/LenaCutted.jpeg'
+                  src='/assets/LenaCutted.webp'
                   alt="Lena Marie"
                   className="object-cover rounded-3xl shadow-lg"
               />
@@ -56,7 +56,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <img
-                  src='/assets/BandImage.jpg'
+                  src='/assets/BandImage.webp'
                   alt="Die Bandmitglieder"
                   className="w-full h-full object-cover rounded-3xl"
               />
@@ -134,7 +134,7 @@ export default function Home() {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <img
-                src='/assets/ZuckergoscherlWithoutBackground.png'
+                src='/assets/ZuckergoscherlWithoutBackground.webp'
                 alt="Latest release"
                 className="w-full h-full object-cover rounded-3xl p-2 bg-cream"
               />
@@ -217,7 +217,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <img src='/assets/ContactImage.jpg'
+              <img src='/assets/ContactImage.webp'
                    alt="Die Bandmitglieder"
                    className="w-full h-full object-cover rounded-3xl" />
             </div>

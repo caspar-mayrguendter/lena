@@ -182,9 +182,9 @@ function ContactForm() {
 
 export default function Weddings() {
   const weddingVideos = [
-    { videoId: 'dQw4w9WgXcQ', title: 'Example Wedding Performance 1' },
-    { videoId: 'dQw4w9WgXcQ', title: 'Example Wedding Performance 2' },
-    { videoId: 'dQw4w9WgXcQ', title: 'Example Wedding Performance 3' },
+    { videoId: 'zG9HOpDR4pY', title: 'Example Wedding Performance 1' },
+    { videoId: 'zG9HOpDR4pY', title: 'Example Wedding Performance 2' },
+    { videoId: 'zG9HOpDR4pY', title: 'Example Wedding Performance 3' },
   ];
 
   return (
