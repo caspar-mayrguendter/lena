@@ -9,20 +9,24 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'Wie weit fahre ich?',
+    answer: 'Ich lebe in Wien und bin bereit, österreichweit und in den Süden Deutschlands zu fahren. Fahrtkosten müssen dann von den Veranstalter*innen übernommen werden.',
   },
   {
-    question: 'Ut enim ad minim veniam, quis nostrud exercitation?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'Welche Technik bringe ich mit?',
+    answer: 'Ein Keyboard und Mikrofon, auf Anfrage auch eine ganze Anlage.',
   },
   {
-    question: 'Duis aute irure dolor in reprehenderit in voluptate?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'Darf man sich Songs wünschen?',
+    answer: 'Sehr gerne!',
   },
   {
-    question: 'Excepteur sint occaecat cupidatat non proident?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    question: 'Spielst du auch mit Gitarre/Cajon oder Band?',
+    answer: 'Ja! Auf Anfrage spiele ich kleinere Veranstaltungen mit Percussionisten und Gitarissten, große Feste auch gerne mit ganzer Band.',
+  },
+  {
+    question: 'Wie weit im Voraus müssen wir buchen?',
+    answer: 'Am besten so früh wie möglich, besonders, wenn euer Termin in der Hochzeitssaison liegt. Aber auch kurzfristige Anfragen sind jederzeit willkommen. Fragt einfach nach, vielleicht ist euer Wunschtermin noch frei.',
   },
 ];
 
@@ -182,9 +186,7 @@ function ContactForm() {
 
 export default function Weddings() {
   const weddingVideos = [
-    { videoId: 'zG9HOpDR4pY', title: 'Example Wedding Performance 1' },
-    { videoId: 'zG9HOpDR4pY', title: 'Example Wedding Performance 2' },
-    { videoId: 'zG9HOpDR4pY', title: 'Example Wedding Performance 3' },
+    { videoId: 'hCnENHjHaQI', title: 'Stand by me (Cover)' },
   ];
 
   return (
@@ -192,32 +194,29 @@ export default function Weddings() {
       {/* Section 1: Hero with image and text, plus gallery */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 mb-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 mb-4 items-center">
             <div className="order-2 lg:order-1">
               <h1 className="font-serif text-4xl md:text-5xl text-dusty-rose mb-6">
                 Musik für deinen besonderen Tag
               </h1>
               <div className="text-dusty-rose/70 space-y-4 leading-relaxed">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                  in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                  doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                  veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                  Musik darf in besonderen Momenten nicht fehlen.
+                  Ob Trauung, Taufe, Agape oder Geburtstag,
+                  der Ton macht das Event. Ich begleite Ihre
+                  Feier individuell mit gefühlvollem Gesang
+                  und Klavier (auf Anfrage
+                  auch mit Band). Mein vielfältiges Repertoire wandert
+                  von Pop über Soul und Indie in Richtung Jazz, wobei
+                  ich sehr gerne auch auf Wunschsongs eingehe und
+                  diese einstudiere,
+                  um Ihr Event so individuell wie möglich zu gestalten..
                 </p>
               </div>
             </div>
             <div className="order-1 lg:order-2">
               <img
-                src="https://images.pexels.com/photos/3014842/pexels-photo-3014842.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/assets/events/LenaMarie1.webp"
                 alt="Wedding music performance"
                 className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl shadow-lg"
               />
@@ -225,11 +224,11 @@ export default function Weddings() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div/>
+            <div/>
             {[
-              'https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=400',
-              'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=400',
-              'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=400',
-              'https://images.pexels.com/photos/1024608/pexels-photo-1024608.jpeg?auto=compress&cs=tinysrgb&w=400',
+              '/assets/events/LenaMarie2.webp',
+              '/assets/events/LenaMarie3.webp',
             ].map((src, index) => (
               <img
                 key={index}
@@ -246,11 +245,10 @@ export default function Weddings() {
       <section className="py-20 px-6 bg-soft-pink/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl text-dusty-rose mb-4 text-center">
-            Eindrücke von vergangenen Auftritten
+            Hörproben
           </h2>
           <p className="text-dusty-rose/70 text-center mb-12 max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -281,7 +279,7 @@ export default function Weddings() {
             Buchung & Kontakt
           </h2>
           <p className="text-dusty-rose/70 text-center mb-16 max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
           </p>
 
           <div className="grid lg:grid-cols-2 gap-16">
@@ -296,29 +294,21 @@ export default function Weddings() {
                   {
                     step: 1,
                     title: 'Kontakt aufnehmen',
-                    description:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                     icon: Mail,
                   },
                   {
                     step: 2,
                     title: 'Kennenlernen',
-                    description:
-                      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                     icon: Music,
                   },
                   {
                     step: 3,
                     title: 'Planung & Abstimmung',
-                    description:
-                      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
                     icon: Calendar,
                   },
                   {
                     step: 4,
                     title: 'Dein besonderer Tag',
-                    description:
-                      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                     icon: CheckCircle,
                   },
                 ].map((item) => (
@@ -333,9 +323,6 @@ export default function Weddings() {
                         <item.icon className="w-5 h-5 text-dusty-rose/60" />
                         <h4 className="font-medium text-dusty-rose">{item.title}</h4>
                       </div>
-                      <p className="text-dusty-rose/70 text-sm leading-relaxed">
-                        {item.description}
-                      </p>
                     </div>
                   </div>
                 ))}
@@ -343,18 +330,16 @@ export default function Weddings() {
 
               <div className="mt-12 bg-soft-pink rounded-3xl p-8">
                 <h4 className="font-serif text-xl text-dusty-rose mb-4">
-                  Nach der Buchung
+                  Preis auf Anfrage
                 </h4>
                 <p className="text-dusty-rose/70 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Die detaillierte Preisliste sende ich euch gerne auf Anfrage. Der Preis variiert je nach Event, Besetzung, Dauer und Equipment, das ich bereitstelle.
                 </p>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-soft-pink/30 rounded-3xl p-8">
+            <div className="bg-soft-pink/30 rounded-3xl p-8 ">
               <h3 className="font-serif text-2xl text-dusty-rose mb-8">
                 Anfrage senden
               </h3>
@@ -367,12 +352,9 @@ export default function Weddings() {
       {/* Section 4: FAQ */}
       <section className="py-20 px-6 bg-soft-pink/50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl text-dusty-rose mb-4 text-center">
-            Häufig gestellte Fragen
+          <h2 className="font-serif text-3xl md:text-4xl text-dusty-rose mb-8 text-center">
+            Falls ihr noch Fragen habt...
           </h2>
-          <p className="text-dusty-rose/70 text-center mb-12">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
 
           <FAQAccordion />
         </div>

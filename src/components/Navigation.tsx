@@ -36,7 +36,7 @@ export default function Navigation() {
                 isActive('/events') ? 'text-dusty-rose' : 'text-dusty-rose/60 hover:text-dusty-rose'
               }`}
             >
-              EVENTS
+              MUSIK FÜR BESONDERE ANLÄSSE
             </Link>
           </li>
         </ul>
